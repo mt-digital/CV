@@ -1,95 +1,116 @@
-%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Change the font size of your document - 10pt, 12.1pt, etc.
-\documentclass[letterpaper,11pt,oneside]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{setspace}
-\setstretch{1.25}
-\usepackage{hyperref}
-\usepackage{color}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\definecolor{bleudefrance}{rgb}{0.19,0.55,0.91}
-\definecolor{gunmetal}{rgb}{0.16,0.2,0.22}
-\hypersetup{
-  colorlinks=true,
-  % urlcolor={blue},
-  % linkcolor={blue}
-  urlcolor={bleudefrance},
-  linkcolor={bleudefrance}
-}
+%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee 
+% that it will correctly compile on your system if you have a non-standard  
+% configuration.
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
 
-\usepackage{changepage}
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
 
-\usepackage{hanging}
+\documentclass[11pt, letterpaper]{article}
+\usepackage{fontspec} 
+\usepackage{marvosym}
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{letterpaper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
 
-\usepackage{graphicx}
-\graphicspath{ {images/}} %upload your signature to this file
-%Change the margins to fit your CV/resume content
-\usepackage[left=1in, right=1in, bottom=1.25in, top=1.25in]{geometry}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+% FONTS
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Hoefler Text}
+% \setmainfont [BoldFont={STIX Two Text SemiBold}, Ligatures={Common},
+% Numbers={OldStyle}, Variant=01]{STIX Two Text}
+% \setmainfont [BoldFont={STIX Two Text SemiBold}, Ligatures={Common},
+% Numbers={OldStyle}, Variant=01]{STIX Two Text}
+% \setromanfont [Ligatures={Common},
+% Numbers={OldStyle}, Variant=01]{STIX Two Text}
+\setmonofont[Scale=0.95]{PT Sans}
 
-%Skype information - include your Skype name for a link to add you on Skype
-% \newcommand*{\Skype}{\href{skype:john.smith?add}{john.smith}} 
-% \newcommand{\Absender}[1][\normalsize]{\Skype} 
+% ---- CUSTOM COMMANDS
+% \chardef\&="E050
+\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
+\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
+\newcommand{\lurl}[1]{\href{#1}{\scriptsize\textsc{[link]}}}
 
-%Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
-\pagenumbering{gobble}
+\newcommand{\githubsymbol}{\raisebox{-2pt}{\includegraphics[height=10.5pt]{github}}}
+\newcommand{\twittersymbol}{\raisebox{-2pt}{\includegraphics[height=10.5pt]{twitter}}}
+\newcommand{\monitorsymbol}{\raisebox{-2pt}{\includegraphics[height=10.5pt]{monitor}}}
 
-%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\amper{}}{\chardef\amper="E0BD }
+\newcommand{\years}[1]{\marginnote{\small #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
 
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\mdseries\upshape\Large}
+\subsectionfont{\mdseries\scshape\normalsize} 
+\subsubsectionfont{\mdseries\upshape\large} 
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[%dvipdfm, 
+bookmarks, colorlinks, breaklinks, 
+% ---- FILL IN HERE THE TITLE AND AUTHOR
+	pdftitle={Matthew A. Turner - Vita},
+	pdfauthor={Matthew A. Turner, PhD},
+	pdfproducer={https://mt.digital}
+]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} 
+
+% DOCUMENT
 \begin{document}
+  {\LARGE Matthew A. Turner}\\[1cm]
+\begin{minipage}[t]{0.5\textwidth}
+  Stanford Doerr School of Sustainability \\
+  Division of Social Sciences \\
+  Stanford University \\
+  450 Serra Mall \\
+  Stanford, CA, USA 94305
+\end{minipage} \hspace{4em}
+\begin{minipage}[t]{0.4\textwidth}
+  \Telefon\quad\texttt{+1 585 350 8649} \\
+  \Letter\quad\href{mailto:maturner@stanford.edu}{maturner@stanford.edu}\\
+  \githubsymbol\quad\href{https://github.com/mt-digital}{mt-digital} \\
+  \twittersymbol\quad\href{https://github.com/mt-digital}{mt-digital} \\
+  \monitorsymbol\quad\href{https://mt.digital}{https://mt.digital}
+\end{minipage}
+\\[1.5em]
 
-%%%%%%%%%%%%%%%%% NAME OF APPLICANT %%%%%%%%%%%%%%%%%%%
 
-\noindent  \textcolor{gunmetal}{\LARGE{\textbf{Matthew Adam Turner}}} \\
-\vspace{-2ex}
-\hrule 
-\normalsize
+% \hrule
+\section*{Current position}
+\years{2021-} \emph{Postdoctoral fellow}, Stanford University, USA
 
-%%%%%%%%%%%%%%%%% CONTACT INFORMATION %%%%%%%%%%%%%%%%%
-% Your email address, website, and Skype name are links to send email, open your website and add you on Skype. 
+%%\hrule
+% \section*{Areas of specialization}
+%  Computational modeling • Cultural evolution • Social influence 
 
-\begin{center}
-\begin{tabular}{l l}
- Stanford University & \hspace{1in} \href{mailto:maturner@stanford.edu}{maturner@stanford.edu} \\
- Department of Earth System Science    & \hspace{1in}  \href{https://mt.digital}{mt.digital}   \\
- 450 Serra Mall  & \hspace{1in}  \href{https://github.com/mt-digital}{GitHub: mt-digital}\\
- Stanford, CA 94305 & \hspace{1in} Phone: +1 (585) 350-8649 \\
-\end{tabular}
-\end{center}
-
-% \vspace{1em}
-
-%%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The main body is contained in a tabular environment. To move sections onto the next page, simply end the tabular environment and begin a new tabular environment.
-\section*{\textcolor{gunmetal}{Education and training}}
-
-% \begin{minipage}{0.9\textwidth}
-  \begin{hangparas}{0.25in}{1}
-    \textbf{Postdoctoral researcher}, Earth System Science, \emph{Stanford University}. September 2021 - Present.
-
-    \textbf{Ph.D.}, Cognitive and Information 
-      Sciences, \emph{University of California, Merced}. August 2021. \\ Chair: Paul E. Smaldino. \\ Committee:
-    Christopher T. Kello, Teenie Matlock, and Jeffrey Yoshimi. 
-
-    \textbf{M.S. with thesis}, Applied Physics, \emph{Rice University}, 2012.
-
-    \textbf{B.S.} Mathematics, Physics. \emph{Syracuse University}, 2008.
-  \end{hangparas}
-
+%%\hrule
+\section*{Professional Experience}
 \noindent
-% \textcolor{gunmetal}{{\Large Professional experience}} \\
-% \subsection*{\textcolor{gunmetal}{Professional experience}}
-\section*{\textcolor{gunmetal}{Professional experience}}
-
-% \begin{minipage}{0.9\textwidth}
-  \begin{hangparas}{0.25in}{1}
-    October 2014 - September 2016 \hspace{-0.555em} \quad\textbf{Research Software Developer II}, 
+\years{2014-2016} Research Software Developer II, 
         \emph{Northwest Knowledge Network, University of Idaho}, Moscow, ID, USA. Led development of the ``Virtual Watershed'' modeling and data analysis \&
         management system and associated tools (see Volk \& Turner, 2019, and 
         Gregory, et al., 2020, listed below). 
         Integrated contributions of faculty, graduate students,
-        and other professional software developers.
+        and other professional software developers. \\
 
-      September 2012 - October 2014 \quad \textbf{Data Engineer}, 
+        \years{2012-2014} Data Engineer, 
       \emph{Economic Modeling Specialists Int'l}, Moscow, ID, USA.
       Ported legacy PHP code and SQL queries for large-scale 
       economic data processing
@@ -97,42 +118,62 @@
       Developed novel approaches and applied best-practices to large-scale
       economic forecasts.
 
-  \end{hangparas}
-% \end{minipage}
-
+%\hrule
+\section*{Education}
 \noindent
-% {\Large Education} \\
-% \subsection*{\textcolor{gunmetal}{Education}}
-% \end{minipage} 
+  \years{2021}\textsc{PhD}, Cognitive and Information 
+      Sciences, \emph{University of California, Merced}. Chair: Paul E.
+      Smaldino. \\
+  \years{2012}\textsc{MS} in Applied Physics, \emph{Rice University}\\
+  \years{2008}\textsc{BS} in Physics, Mathematics \emph{Syracuse University}
 
-% Command for me as author (boldface).
-
+% \hrule
+\section*{Grants, honors, and awards}
 \noindent
-% {\Large Publications}  \\
-\section*{\textcolor{gunmetal}{Publications}}
-% \vspace{.1in}
+\years{2022-2024}Pandemic Preparedness Postdoctoral Fellowship \\
+\years{2020-2021}NSF Research Training (NRT) Program in Intelligent Adaptive
+Systems \lurl{https://nrt-ias.ucmerced.edu/content/matthew-turner} \\
+\years{2015} Research Data Alliance Early Career Fellow 
+\lurl{https://rd-alliance.org/rda_us}\\
+\years{2010-2012} NSF Integrative Graduate Education and Research Traineeship (IGERT) Fellow \\
+\years{2008} NSF International Research Experience for Students (IRES) at
+Universidade Federal de Santa Catarina, Santa Catarina, Brazil
 
-% \begin{minipage}{0.9\textwidth}
-\begin{hangparas}{0.25in}{1}
-  Smaldino PE \& \textbf{Turner MA} (2021). Covert signaling is an adaptive communication strategy in diverse populations. \emph{Psychological Review.} \url{https://doi.org/10.1037/rev0000344}
+\section*{Publications and talks}
 
-  \textbf{Turner MA} \& Smaldino PE. (In press). Mechanistic Modeling for the Masses - 
+\subsection{Journal articles}
+
+\setlength{\parskip}{10pt}
+
+  \textbf{Turner MA}, Moya C, Smaldino PE, \& Jones JH (2022). The Form of
+  Uncertainty Affects Selection for Social Learning. \emph{Under review}.
+  \lurl{https://osf.io/preprints/socarxiv/brqmn/}
+
+  \textbf{Turner MA}, Moya C, Smaldino PE, \& Jones JH (2022). Some
+  forms of uncertainty may suppress the evolution of social
+  learning. \emph{Proceedings of the 44$^{\,th}$ Annual Conference
+  of the Cognitive Science Society}.
+  \lurl{https://psyarxiv.com/dzteh/}
+
+  \textbf{Turner MA} \& Smaldino PE. (2022). Mechanistic Modeling for the Masses - 
   commentary on Yarkoni, ``The generalizability crisis.''
-  Behavioral and Brain Sciences. \url{https://psyarxiv.com/8pj9n}
+  \emph{Behavioral and Brain Sciences}.
+  \lurl{https://doi.org/10.1017/S0140525X2100039X}
 
-  \textbf{Turner MA} \& Smaldino PE (2020). Stubborn Extremism as a Potential Pathway to Group Polarization. \emph{Proceedings of the 42$^{\,nd}$ Annual Conference of the Cognitive Science Society}. \url{https://cogsci.mindmodeling.org/2020/papers/0153/}
+  Smaldino PE \& \textbf{Turner MA} (2021). Covert signaling is an adaptive communication strategy in diverse populations. \emph{Psychological Review.} \lurl{https://doi.org/10.1037/rev0000344}
+
+  \textbf{Turner MA} \& Smaldino PE (2020). Stubborn Extremism as a Potential Pathway to Group Polarization. \emph{Proceedings of the 42$^{\,nd}$ Annual Conference of the Cognitive Science Society}. \lurl{https://cogsci.mindmodeling.org/2020/papers/0153/}
 
     Gregory A, \ldots, \textbf{Turner MA} (2020). Efficient Model-data Integration for Flexible Modeling, Parameter Analysis \& Visualization, and Data Management. \emph{Frontiers in Water}. 
-    \url{https://doi.org/10.3389/frwa.2020.00002}
+    \lurl{https://doi.org/10.3389/frwa.2020.00002}
 
-    Smaldino PE, \textbf{Turner MA}, Contreras Kallens PA (2019). Open Science and Modified Funding Lotteries Can Impede the Natural Selection of Bad Science. \emph{Royal Society Open Science}, 6(8), 191249. \url{https://doi.org/10.1098/rsos.191249}
+    Smaldino PE, \textbf{Turner MA}, Contreras Kallens PA (2019). Open Science and Modified Funding Lotteries Can Impede the Natural Selection of Bad Science. \emph{Royal Society Open Science}, 6(8), 191249. \lurl{https://doi.org/10.1098/rsos.191249}
 
-    Volk JM \& \textbf{Turner MA} (2019). PRMS-Python: A Python framework for programmatic PRMS modeling and access to its data structures. \emph{Environmental Modelling and Software}, 114, 152–165. \url{https://doi.org/10.1016/j.envsoft.2019.01.006}
+    Volk JM \& \textbf{Turner MA} (2019). PRMS-Python: A Python framework for programmatic PRMS modeling and access to its data structures. \emph{Environmental Modelling and Software}, 114, 152–165. \lurl{https://doi.org/10.1016/j.envsoft.2019.01.006}
 
     \textbf{Turner MA} \& Smaldino PE (2018). Paths to Polarization: How Extreme Views,
-    Miscommunication, and Random Chance Drive Opinion Dynamics. \emph{Complexity}. \url{https://doi.org/10.1155/2018/2740959}
+    Miscommunication, and Random Chance Drive Opinion Dynamics. \emph{Complexity}. \lurl{https://doi.org/10.1155/2018/2740959}
     
-  \textbf{Turner MA} (2012) \emph{Experimental and Numerical Investigations of Novel Architectures Applied to Compressive Imaging Systems}. Master's thesis. Rice University. Houston, Texas. (\href{https://www.researchgate.net/publication/274720620_Experimental_and_Numerical_In vestigations_of_Novel_Architectures_Applied_to_Compressive_Imaging_Systems}{link})
 
     Xu L, Davenport MA, \textbf{Turner MA}, Sun T, Kelly K (2011) Compressive Echelle Spectroscopy. \emph{Proceedings of the SPIE – The International Society for Optical Engineering.}
 
@@ -143,51 +184,57 @@
     Acevedo R, Lombardini R, \textbf{Turner MA}, Kinsey JL, Johnson BR (2008)
     Quantum and electromagnetic propagation with the conjugate symmetric
     Lanczos method. \emph{Journal of Chemical Physics}, 128.
-    
-  \end{hangparas}
-% \end{minipage} \\[.25in]
 
-% {\Large Preprints} \\
+    \subsection{Patent}
 
-\noindent
-\section*{\textcolor{gunmetal}{Patent}}
-
-% \begin{minipage}{0.9\textwidth}
-  \begin{hangparas}{0.25in}{1}
   Kelly KF, Baraniuk RG, Woods G, Sun T, \textbf{Turner MA}. U.S. Patent No. 9,124,755. 
   ``Apparatus and method for compressive imaging and sensing through multiplexed modulation''.
   September 1, 2015.
 
-    
-  \end{hangparas}
+  \subsection{Dissertation and thesis}
 
+  \textbf{Turner MA} (2021) \emph{Four studies of communicative, cognitive,
+  and social factors in extremism and polarization}. Doctoral dissertation.
+  University of California, Merced, USA. \lurl{https://escholarship.org/uc/item/56h2v4bg}
 
+  \textbf{Turner MA} (2012) \emph{Experimental and Numerical
+  Investigations of Novel Architectures Applied to Compressive
+Imaging Systems}. Master's thesis. Rice University. Houston,
+Texas. \lurl{https://www.researchgate.net/publication/274720620_Experimental_and_Numerical_In vestigations_of_Novel_Architectures_Applied_to_Compressive_Imaging_Systems}
 
-\noindent
-% {\Large Presentations} \\
+\subsection{Code and tools}
 
-\noindent
-\section*{\textcolor{gunmetal}{Works in progress}}
-\begin{hangparas}{0.25in}{1}
+\textbf{Turner MA}. \texttt{iatv}: Python API for interacting with the Internet
+Archive's TV News Archive. \lurl{https://github.com/mt-digital/iatv} \\
 
-  \textbf{Turner MA} \& Smaldino PE. Most group polarization results may be
-  simple conformity.
-  \emph{In preparation}.
+\textbf{Turner MA}. \texttt{iatv-research.com}: free, public web interface to download
+CSV-formatted Internet Archive TV News Archive search results. \lurl{http://iatv-research.com}
 
-  \textbf{Turner MA} \& Smaldino PE. Group polarization emerges from stubborn extremism.
-  \emph{In preparation}.
+\textbf{Turner MA} \& Volk JM. \texttt{PRMS-Python}: provides intuitive
+structures and functions for implementing and managing common modeling
+workflows with PRMS, the United States Geological Survery’s hydrologic computer
+model. \lurl{https://prms-python.github.io/PRMS-Python/build/html/index.html}
 
-  \textbf{Turner MA}, Maglio PP, Matlock T. Metaphorical Violence in Political Discourse. 
-  \emph{Under revision}. Preprint: \url{https://doi.org/10.31235/osf.io/t8yg9}.
+\subsection{Conference talks}
 
-\end{hangparas}
+    \textbf{Turner MA} Moya C, Smaldino PE, \& Jones JH (2022, September). Some forms of
+    uncertainty may suppress the evolution of social learning. 4th Cultural Evolution Society
+    Conference. Aarhus University, Denmark. 
 
-\noindent
-\section*{\textcolor{gunmetal}{Talks and presentations}}
+    \textbf{Turner MA} Moya C, Smaldino PE, \& Jones JH (2022, July). Some forms of
+    uncertainty may suppress the evolution of social learning. 44th Annual Meeting of the
+    Cognitive Science Society. Toronto, Canada. 
 
-% \begin{minipage}{0.9\textwidth}
-  \begin{hangparas}{0.25in}{1}
-    \textbf{Turner MA}, \emph{Theory and practice of open science solutions}. Presented as a two-day lecture and workshop to Heather Bortfeld's graduate introductory psychology class. I presented how open science works (pre-registration, accessible data management, open data, open code, etc.) and how it can help ease the various crises (e.g. replication, theory, generalizability crises) faced by psychological research.
+    \textbf{Turner MA}, (2022, July) Group polarization or simple consensus?
+    A generative model that shows many group polarization detections are
+    plausibly false positives. 8th International Conference on Computational
+    Social Science. Poster. Chicago, USA.
+
+    % \textbf{Turner MA}, (2021, March) \emph{Theory and practice of open science solutions}. Presented as a two-day lecture and workshop to Heather Bortfeld's graduate introductory psychology class. I presented how open science works (pre-registration, accessible data management, open data, open code, etc.) and how it can help ease the various crises (e.g. replication, theory, generalizability crises) faced by psychological research.
+ \textbf{Turner MA} Moya C, Smaldino PE, \& Jones JH (2022, September). How
+ environmental uncertainty and correlated payoffs drive the evolution of social
+ learning. American Association of Biological Anthropologists Conference 2022.
+ Online.
 
     \textbf{Turner MA}, (2021, February) Statistical Models of Group Polarization: Putting Theory into Practice. Society for Personality and Social Psychology. Poster. Online.
 
@@ -197,54 +244,68 @@
 
    \textbf{Turner MA} \& Smaldino PE, (2020, July) Group polarization via stubborn extremism. 6th International Conference on Computational Social Science. Online.
 
-Kello C, \textbf{Turner MA}, Alviar C, (2019, August) A Statistical Model of Hierarchical Temporal Structure. The Guy Van Orden UConn Workshop on Cognition and Dynamics, XIV. Univeristy of Connecticut.
+Kello C, \textbf{Turner MA}, Alviar C, (2019, August) A Statistical Model of
+Hierarchical Temporal Structure. The Guy Van Orden UConn Workshop on Cognition
+and Dynamics, XIV. Univeristy of Connecticut.
 
-\textbf{Turner MA}, Bernacchi L, Maglio PP, Matlock T, (2018, December) How regulations strangle business: Lessons for science communication based on violence metaphors in the 2016 presidential election. eLightning talk at the American Geophysical Union meeting in Washington, D.C. \url{https://agu.confex.com/agu/fm18/meetingapp.cgi/Paper/451955}
+\textbf{Turner MA}, Bernacchi L, Maglio PP, Matlock T, (2018, December) How regulations
+strangle business: Lessons for science communication based on violence metaphors in the 2016
+presidential election. eLightning talk at the American Geophysical Union meeting in Washington,
+D.C. \lurl{https://agu.confex.com/agu/fm18/meetingapp.cgi/Paper/451955}
 
 \textbf{Turner MA} \& Smaldino PE, (2018, October) Cultural polarization depends on whom we learn from and how well we communicate. Lightning talk during plenary session presented at the Cultural Evolution Society meeting in Tempe, Arizona.
 
 \textbf{Turner MA}, Maglio PP, Matlock, T, (2017, July) A corpus analysis of the dynamics of violence metaphors in cable news programming on US politics. Talk presented at the 14th International Cognitive Linguistics Conference in Tartu, Estonia.
 
-\textbf{Turner MA}, Bernacchi, L, Maglio, PP, Matlock, T, (2017, June) Breaking news: the EPA is strangling the economy! An analysis of metaphorical violence and US environmental regulators. Talk presented at the 2017 Conference on Communication and the Environment.
+\textbf{Turner MA}, Bernacchi, L, Maglio, PP, Matlock, T, (2017, June) Breaking
+news: the EPA is strangling the economy! An analysis of metaphorical violence
+and US environmental regulators. Talk presented at the 2017 Conference on
+Communication and the Environment in Washington, DC.
 
 \textbf{Turner MA}, Miller, SJ, Gregory, AE, Cadol, DD, Stone, MC, Sheneman, L, (2016, December). Coupled RipCAS-DFLOW (CoRD) Software and Data Management System for Reproducible Floodplain Vegetation Succession Modeling. Poster presented at the American Geophysical Society meeting in San Francisco, CA.
 
 \textbf{Turner MA}, Koskela R, Vardigan M, Dubin D, Sheneman L. (2015, September). Linked Interdisciplinary Data Discovery. Poster presented at the 6th RDA Plenary in Paris, France. 
-  \end{hangparas}
-% \end{minipage} \\[.25in]
 
 
-% \begin{minipage}{0.9\textwidth}
-  % \begin{hangparas}{0.25in}{1}
-  % \end{hangparas}
-% \end{minipage} \\[.25in]
+\subsection{White papers}
 
-\noindent
-\section*{\textcolor{gunmetal}{Awards}}
+  \textbf{Turner MA}, Maglio PP, Matlock T. (2018) Metaphorical Violence in Political Discourse. 
+  \lurl{https://doi.org/10.31235/osf.io/t8yg9}
+
+  \textbf{Turner MA} (2018) A neural network to classify metaphorical violence
+  on cable news. \lurl{https://arxiv.org/abs/1810.08677}
+
+
+\section*{Teaching}
+
 \begin{itemize}
-  \item NSF Research Training (NRT) Program in Intelligent Adaptive Systems, September 2020 - August 2021.
-  \item Research Data Alliance Early Career Fellow, May 2015
-    (\href{https://rd-alliance.org/rda_us data share program}{info}).
-  \item NSF Integrative Graduate Education and Research Traineeship (IGERT) Fellow, August 2010 - May 2012.
-  \item NSF International Research Experience for Students (IRES) at UFSC,
-    Santa Catarina, Brazil, Summer 2008;
-    astrophysical research and autonomous telescope network development.
+  \item
+   Led ten-week agent-based modeling workshop and introduction to the Julia
+    programming language for Prof. Jamie Jones' lab group and associates,
+    Spring 2022
+
+  \item
+   Invited by Prof.\ Heather Bortfeld's lab (UC Merced Psychology) to give workshop on cultural evolution, agent-based modeling, and open science best-practices, Spring 2021
+
+ \item
+   Led hands-on workshop in Prof.\ Smaldino's lab group on how to use the on-campus supercomputing cluster at UC Merced, Spring 2020
+
+ \item
+   TA/Computing lab instructor, Introduction to Artificial Intelligence, Prof.\ David Noelle, Fall 2017, 2018, \& 2019
+
+ \item
+   TA/Computing lab instructor and guest lecturer, Modeling Social Systems, Prof.\ Paul Smaldino, Spring 2019
+ \item
+   TA, Contemporary Moral Problems, Prof.\ David Jennings, Spring 2018
+ \item
+   TA, Introduction to Ethics, Prof.\ David Jennings, Spring 2017
+ \item
+   TA, Introduction to Cognitive Science, Prof.\ Rick Dale, Fall 2016
+
 \end{itemize}
 
-\noindent
-\section*{\textcolor{gunmetal}{Teaching experience}}
-\begin{itemize}
-  \item Invited by Prof.\ Heather Bortfield to give lecture and workshop on cultural evolution and open science best-practices, Spring 2021
-  \item Led hands-on workshop in Prof.\ Smaldino's lab group on how to use the on-campus supercomputing cluster at UC Merced, Spring 2020
-  \item TA/Computing lab instructor, Introduction to Artificial Intelligence, Prof.\ David Noelle, Fall 2017, 2018, \& 2019
-  \item TA/Computing lab instructor and guest lecturer, Modeling Social Systems, Prof.\ Paul Smaldino, Spring 2019
-  \item TA, Contemporary Moral Problems, Prof.\ David Jennings, Spring 2018
-  \item TA, Introduction to Ethics, Prof.\ David Jennings, Spring 2017
-  \item TA, Introduction to Cognitive Science, Prof.\ Rick Dale, Fall 2016
-\end{itemize}
+ \section*{Mentorship}
 
-\noindent
-\section*{\textcolor{gunmetal}{Mentorship}}
 \begin{itemize}
   \item Mentored and supervised several UC Merced students in 2017 
     who contributed to
@@ -257,39 +318,35 @@ Kello C, \textbf{Turner MA}, Alviar C, (2019, August) A Statistical Model of Hie
   \item Mentored and supervised undergraduate Joy Dai on a signal processing project using MATLAB for
     one semester of research at Rice University, 2011.
 \end{itemize}
+%\hrule
+\section*{Reviewer service}
 
-\noindent
-\section*{\textcolor{gunmetal}{Preprints}}
-\begin{hangparas}{0.25in}{1}
+\emph{Evolutionary Human Sciences} $~\cdot~$ \emph{Cognitive Processing} $~\cdot~$ \emph{Psychological Review} $~\cdot~$ \emph{Society for Personality and Social Psychology Annual Convention} $~\cdot~$ \emph{Cognitive Systems Research}
 
-  \textbf{Turner MA} (2018) A neural network to classify metaphorical violence on cable news. \url{https://arxiv.org/abs/1810.08677}
+%\vspace{1cm}
+\section*{Skills}
 
-\end{hangparas}
-
-\noindent
-\section*{\textcolor{gunmetal}{Reviewer service}}
-
-  \begin{hangparas}{0.25in}{1}
-    \emph{Cognitive Processing} $\cdot$ \emph{Psychological Review} $\cdot$ \emph{Society for Personality and Social Psychology Annual Convention} $\cdot$ \emph{Cognitive Systems Research}
-  \end{hangparas}
-
-
-\noindent
-\section*{\textcolor{gunmetal}{Skills}}
-
-\begin{hangparas}{0.25in}{1}
-  \textbf{Programming languages}: Julia; Scala; Python; R; NetLogo; bash/shell scripting; 
-  HTML/CSS/JavaScript; Java; D; MATLAB; Mathematica; Clojure.
+  \textbf{Programming languages}: Julia; Python; R; NetLogo; bash/shell scripting; 
+  HTML/CSS/JavaScript; Java; D; MATLAB; Mathematica; Scala; Clojure.
 
   \textbf{Technical proficiencies}: Computational 
-  modeling, especially agent-based; Jupyter notebooks; Cluster computing;
-  Git/GitHub; Web servers; \LaTeX; MongoDB and SQL; REST APIs and API
-  development generally.
+  modeling, especially agent-based modeling; Cluster computing;
+  Git \& GitHub; Web servers; \LaTeX; MongoDB, SQL, and other databases; 
+  REST APIs and API development.
 
   \textbf{Languages:} English; some experience with Portuguese, French,
   and Spanish.
-\end{hangparas}
 
+\vfill
+\hrulefill
+
+\begin{center}
+  {\scriptsize  Last updated: \today\- $~\cdot~$ \- 
+% ---- PLEASE LEAVE THIS BACKLINK FOR ATTRIBUTION AS PER CC-LICENSE
+% Typeset in \href{http://nitens.org/taraborelli/cvtex}{
+% \fontspec{Times New Roman}\XeTeX }\\
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+\href{mt.digital}{https://mt.digital}}
+\end{center}
 
 \end{document}
-
