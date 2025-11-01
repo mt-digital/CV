@@ -17,6 +17,7 @@
 \documentclass[11pt, letterpaper]{article}
 \usepackage{fontspec} 
 \usepackage{marvosym}
+\usepackage{relsize}
 % DOCUMENT LAYOUT
 \usepackage{geometry} 
 \geometry{letterpaper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
@@ -28,14 +29,8 @@
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \defaultfontfeatures{Mapping=tex-text}
-\setromanfont[Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Hoefler Text}
-% \setmainfont [BoldFont={STIX Two Text SemiBold}, Ligatures={Common},
-% Numbers={OldStyle}, Variant=01]{STIX Two Text}
-% \setmainfont [BoldFont={STIX Two Text SemiBold}, Ligatures={Common},
-% Numbers={OldStyle}, Variant=01]{STIX Two Text}
-% \setromanfont [Ligatures={Common},
-% Numbers={OldStyle}, Variant=01]{STIX Two Text}
-\setmonofont[Scale=0.95]{PT Sans}
+% \setromanfont[Ligatures={Common}, Numbers={OldStyle}, Variant=01]{PT Sans}
+\setromanfont{Arial}
 
 % ---- CUSTOM COMMANDS
 % \chardef\&="E050
@@ -48,10 +43,12 @@
 \newcommand{\twittersymbol}{\raisebox{-2pt}{\includegraphics[height=10.5pt]{twitter}}}
 \newcommand{\monitorsymbol}{\raisebox{-2pt}{\includegraphics[height=10.5pt]{monitor}}}
 
+\usepackage[document]{ragged2e}
+
 % ---- MARGIN YEARS
 \usepackage{marginnote}
 \newcommand{\amper{}}{\chardef\amper="E0BD }
-\newcommand{\years}[1]{\marginnote{\small #1}}
+\newcommand{\years}[1]{\marginnote{\raggedleft \relscale{0.7} \ #1}}
 \renewcommand*{\raggedleftmarginnote}{}
 \setlength{\marginparsep}{7pt}
 \reversemarginpar
@@ -60,7 +57,7 @@
 \usepackage{sectsty} 
 \usepackage[normalem]{ulem} 
 \sectionfont{\mdseries\upshape\Large}
-\subsectionfont{\mdseries\scshape\normalsize} 
+\subsectionfont{\mdseries\scshape\large} 
 \subsubsectionfont{\mdseries\upshape\large} 
 
 % PDF SETUP
@@ -76,53 +73,128 @@ bookmarks, colorlinks, breaklinks,
 
 % DOCUMENT
 \begin{document}
-  {\LARGE Matthew A. Turner}\\[1em]
+  {\LARGE Matthew A. Turner, PhD}\\[1em]
 \begin{minipage}[t]{0.5\textwidth}
+  Environmental Social Sciences \\
   Stanford Doerr School of Sustainability \\
-  Division of Social Sciences \\
-  Stanford University \\
-  450 Serra Mall \\
-  Stanford, CA, USA 94305
+  Stanford University 
 \end{minipage} \hspace{4em}
 \begin{minipage}[t]{0.4\textwidth}
-  \Telefon\quad\texttt{+1 585 350 8649} \\
-  \Letter\quad\href{mailto:maturner@stanford.edu}{maturner@stanford.edu}\\
+  \Letter\quad\href{mailto:maturner@stanford.edu}{maturner@stanford.edu} \\
+  \monitorsymbol\quad\href{https://ss4s.substack.com}{Substack Newsletter} \\
+  \monitorsymbol\quad\href{https://mt.digital}{https://mt.digital} \\
   \githubsymbol\quad\href{https://github.com/mt-digital}{mt-digital} \\
-  \twittersymbol\quad\href{https://twitter.com/MATurnerPhD}{MATurnerPhD} \\
-  \monitorsymbol\quad\href{https://mt.digital}{https://mt.digital}
+  \Telefon\quad\texttt{+1 585 350 8649} 
 \end{minipage}
 \\[.75em]
 
 
-% \hrule
+\hrule
 \section*{Current position}
-\years{2021-} \emph{Postdoctoral scholar}, Pandemic Preparedness Hub, Stanford University, USA
 
-%%\hrule
-% \section*{Areas of specialization}
-%  Computational modeling • Cultural evolution • Social influence 
+\years{2024-}Lecturer, Department of Environmental Social
+Sciences, Stanford Doerr School of Sustainability, \emph{Stanford University}.
+Developing new courses for the department on quantitative social science for
+sustainability.
 
 %\hrule
-\section*{Education}
+\section*{Education and Training}
 \noindent
+  \years{2022-2024}Pandemic Preparedness Postdoc Fellow, Stanford Medicine, \emph{Stanford University} \\
+  \years{2021-2022}Postdoctoral Scholar, Dept. of Env. Social Sciences, \emph{Stanford University} \\
   \years{2021}\textsc{PhD}, Cognitive and Information 
       Sciences, \emph{University of California, Merced}. \\Chair: Paul E.
       Smaldino. \\
   \years{2012}\textsc{MS}, Applied Physics, \emph{Rice University}\\
-  \years{2008}\textsc{BS}, Physics, Mathematics \emph{Syracuse University}
+  \years{2008}\textsc{BS}, Mathematics, Physics \emph{Syracuse University}
 
+
+\section*{Teaching}
+
+\years{AY '26}\emph{Opinion Change Modeling and Measurement}.
+\textbf{Dept. of Environmental Social Sciences, Stanford University.}
+Developed from scratch to introduce social influence theories
+and models that can be used to predict opinion change over time or to rigorously 
+fit statistical models to empirical data. \lurl{https://explorecourses.stanford.edu/m_search?filter-coursestatus-Active=on&page=0&catalog=&q=EBS+179}
+
+\years{AY '25, '26}\emph{Agent-based Modeling (for Sustainability)}.
+\textbf{Dept. of Environmental Social Sciences, Stanford University.}
+Developed from scratch to introduce students to the computational technique
+of agent-based modeling, used extensively in models of social behavior for
+promoting sustainable practices and behavior. \lurl{https://explorecourses.stanford.edu/m_search?filter-coursestatus-Active=on&page=0&catalog=&q=EBS+182}
+
+\years{AY '25, '26}\emph{Computational Social Science for Sustainability}.
+\textbf{Dept. of Environmental Social Sciences, Stanford University.}
+Developed from scratch to introduce quantitative social science theories
+and models. To support this, I created a novel framework that consolidates
+diverse social science approaches with the purpose of providing a social
+science toolkit to help promote the diffusion of sustainable practices and behaviors.
+\lurl{https://explorecourses.stanford.edu/m_search?filter-coursestatus-Active=on&page=0&catalog=&q=EBS+181}
+\subsection{Other instructional service}
+
+\begin{itemize}
+  \item
+    \emph{Computational Social Science for Sustainability}. Tutorial presented at the
+    \emph{11th International Conference on Computational Social Science} in
+    Norrkörping, Sweden. July 2025.
+  \item
+   Led ten-week agent-based modeling workshop and introduction to the Julia
+    programming language for Prof. Jamie Jones' lab group and associates,
+    Spring 2022
+
+  \item
+   Invited by Prof.\ Heather Bortfeld's lab (UC Merced Psychology) to give workshop on cultural evolution, agent-based modeling, and open science best-practices, Spring 2021
+
+ \item
+   Led hands-on workshop in Prof.\ Smaldino's lab group on how to use the on-campus supercomputing cluster at UC Merced, Spring 2020
+
+ \item
+   TA/Computing lab instructor, Introduction to Artificial Intelligence, Prof.\ David Noelle, Fall 2017, 2018, \& 2019
+
+ \item
+   TA/Computing lab instructor and guest lecturer, Modeling Social Systems, Prof.\ Paul Smaldino, Spring 2019
+ \item
+   TA, Contemporary Moral Problems, Prof.\ David Jennings, Spring 2018
+ \item
+   TA, Introduction to Ethics, Prof.\ David Jennings, Spring 2017
+ \item
+   TA, Introduction to Cognitive Science, Prof.\ Rick Dale, Fall 2016
+
+\end{itemize}
+
+\vspace{-1em}
+ \subsection{Mentorship}
+
+\begin{itemize}
+  \item Mentored a team of graduate student co-authors developing the paper,
+    ``Minority-group incubators and majority-group reservoirs support the diffusion
+    of climate change adaptations,'' (2023) in \emph{Phil. Trans. B} (see
+  \hyperlink{ptblink}{the publication}).
+  \item Mentored and supervised several UC Merced students during my dissertation work
+    who contributed to
+    Metacorps, the web application I developed for annotating metaphor found
+    on cable news. Students were Gloria Quintana, Amy Tang, Sebastian Lavenant, Isabella Methot,
+    Danny Zamora, and Conor Aaron.
+  \item
+    Mentored several graduate student programmers as part of the Virtual Watershed
+    project with the Northwest Knowledge Network.
+  \item Mentored and supervised undergraduate Joy Dai on a signal processing project using MATLAB for
+    one semester of research at Rice University, 2011.
+\end{itemize}
+%\hrule
 
 %%\hrule
 \section*{Professional Experience}
+
 \noindent
-\years{2014-2016} Research Software Developer II, 
+\years{2014-2016}Research Software Developer II, 
         \emph{Northwest Knowledge Network, University of Idaho}, Moscow, ID, USA. Led development of the ``Virtual Watershed'' modeling and data analysis \&
         management system and associated tools (see \hyperlink{volkturner}{Volk \& Turner, 2019}, and 
         \hyperlink{vwpaper}{Gregory, et al., 2020}, listed below). 
         Integrated contributions of faculty, graduate students,
         and other professional software developers. \\
-
-        \years{2012-2014} Data Engineer, 
+        \newpage
+\years{2012-2014}Data Engineer, 
       \emph{Economic Modeling Specialists Int'l}, Moscow, ID, USA.
       Ported legacy PHP code and SQL queries for large-scale 
       economic data processing
@@ -134,22 +206,38 @@ bookmarks, colorlinks, breaklinks,
 \section*{Grants, honors and awards}
 \noindent
 \years{2023}Cognitive Science Society Conference Diversity \& Social Inequality Award \lurl{https://cognitivesciencesociety.org/conference-awards/} \\
-\years{2022-2024}Pandemic Preparedness Hub Postdoctoral Fellowship \lurl{https://pandemichub.stanford.edu/fellows/}\\
+\years{2022-2024}Pandemic Preparedness Hub Postdoc Fellowship \lurl{https://pandemichub.stanford.edu/fellows/}\\
 \years{2022}Hoffman-Yee Seed Grant for applying SciML to social science and
 epidemiology \\
 \years{2020-2021}NSF Research Training (NRT) Program in Intelligent Adaptive
 Systems \lurl{https://nrt-ias.ucmerced.edu/content/matthew-turner} \\
 \years{2015} Research Data Alliance Early Career Fellow 
 \lurl{https://rd-alliance.org/rda_us}\\
-\years{2010-2012} NSF Integrative Graduate Education and Research Traineeship (IGERT) Fellow \\
+\years{2010-2012} NSF Integrative Graduate Education and Research Traineeship
+(IGERT) Fellow \\
 \years{2008} NSF International Research Experience for Students (IRES) at
 Universidade Federal de Santa Catarina, Santa Catarina, Brazil
+sub
 
-\section*{Publications and talks}
 
-\subsection{Journal articles}
+\section*{Research products}
+\setcounter{subsection}{0}
+\subsection{Publications}
 
-\setlength{\parskip}{10pt}
+\setlength{\parskip}{6pt}
+
+  \textbf{Turner MA} (2025). Computational Social Science for Sustainability.
+  \href{https://www.ic2s2-2025.org/tutorials/}{Tutorial
+  presented} at the \emph{11th International Conference on Computational Social Science}
+  in Norrkörping, Sweden. \lurl{https://socsci-for-sustainability.github.io/IC2S2-Tutorial/}
+
+
+  Sutton A, Reynolds AZ, \textbf{Turner MA}, \& Jones JH (2025).
+  Social influencers reduce infection burden and modify epidemic lag in
+  group-structured populations. \emph{Under review}. \lurl{https://doi.org/10.31235/osf.io/6b835_v1}
+
+  Dayer A, Aswamenakul C, \textbf{Turner MA}, Nicolay S, Wang E, Shurik K, \& Holbrook C (2024). Intuitive moral bias favors the religiously
+  faithful. \emph{Scientific Reports}, 1–7. \lurl{https://doi.org/10.1038/s41598-024-67960-4}
 
   \hypertarget{ptblink}{\textbf{Turner MA}}, Singleton AL, Harris MJ, Augusto Lopez C, Harryman I,
     Arthur RF, Muraida C, Jones JH (2023). Minority-group incubators and majority-group reservoirs
@@ -198,6 +286,28 @@ Universidade Federal de Santa Catarina, Santa Catarina, Brazil
 
     % \subsection{Working papers and preprints}
 
+\subsection{Software}
+
+\textbf{Turner MA}. \texttt{socmod}: tidy social behavior models in R.
+\lurl{https://socsci-for-sustainability.github.io/socmod/}
+
+\textbf{Turner MA}. \texttt{MinMaj-Adaptation-Diffusion}: Social learning of adaptive behaviors in a
+metapopulation with a minority and majority group.
+\lurl{https://github.com/eehh-stanford/MinMaj-Adaptation-Diffusion}
+
+\textbf{Turner MA}. \texttt{UncMod}: Model for analyzing social learning evolution in uncertain
+environments. \lurl{https://github.com/mt-digital/UncMod}
+
+\textbf{Turner MA}. \texttt{iatv}: Python API for interacting with the Internet
+Archive's TV News Archive. \lurl{https://github.com/mt-digital/iatv}
+
+% \textbf{Turner MA}. \texttt{iatv-research.com}: free, public web interface to download
+% CSV-formatted Internet Archive TV News Archive search results. \lurl{http://iatv-research.com}
+
+\textbf{Turner MA} \& Volk JM. \texttt{PRMS-Python}: provides intuitive
+structures and functions for implementing and managing common modeling
+workflows with PRMS, the United States Geological Survery’s hydrologic computer
+model. \lurl{https://prms-python.github.io/PRMS-Python/build/html/index.html}
 
 
     \subsection{Patent}
@@ -217,25 +327,6 @@ Universidade Federal de Santa Catarina, Santa Catarina, Brazil
 Imaging Systems}. Master's thesis. Rice University. Houston,
 Texas. \lurl{https://www.researchgate.net/publication/274720620_Experimental_and_Numerical_In vestigations_of_Novel_Architectures_Applied_to_Compressive_Imaging_Systems}
 
-\subsection{Code and tools}
-
-\textbf{Turner MA}. \texttt{MinMaj-Adaptation-Diffusion}: Social learning of adaptive behaviors in a
-metapopulation with a minority and majority group.
-\lurl{https://github.com/eehh-stanford/MinMaj-Adaptation-Diffusion}
-
-\textbf{Turner MA}. \texttt{UncMod}: Model for analyzing social learning evolution in uncertain
-environments. \lurl{https://github.com/mt-digital/UncMod}
-
-\textbf{Turner MA}. \texttt{iatv}: Python API for interacting with the Internet
-Archive's TV News Archive. \lurl{https://github.com/mt-digital/iatv}
-
-% \textbf{Turner MA}. \texttt{iatv-research.com}: free, public web interface to download
-% CSV-formatted Internet Archive TV News Archive search results. \lurl{http://iatv-research.com}
-
-\textbf{Turner MA} \& Volk JM. \texttt{PRMS-Python}: provides intuitive
-structures and functions for implementing and managing common modeling
-workflows with PRMS, the United States Geological Survery’s hydrologic computer
-model. \lurl{https://prms-python.github.io/PRMS-Python/build/html/index.html}
 
 \subsection{Conference talks}
 
@@ -307,65 +398,18 @@ model. \lurl{https://prms-python.github.io/PRMS-Python/build/html/index.html}
   on cable news. \lurl{https://arxiv.org/abs/1810.08677}
 
 
-\section*{Teaching}
-
-\begin{itemize}
-  \item
-   Led ten-week agent-based modeling workshop and introduction to the Julia
-    programming language for Prof. Jamie Jones' lab group and associates,
-    Spring 2022
-
-  \item
-   Invited by Prof.\ Heather Bortfeld's lab (UC Merced Psychology) to give workshop on cultural evolution, agent-based modeling, and open science best-practices, Spring 2021
-
- \item
-   Led hands-on workshop in Prof.\ Smaldino's lab group on how to use the on-campus supercomputing cluster at UC Merced, Spring 2020
-
- \item
-   TA/Computing lab instructor, Introduction to Artificial Intelligence, Prof.\ David Noelle, Fall 2017, 2018, \& 2019
-
- \item
-   TA/Computing lab instructor and guest lecturer, Modeling Social Systems, Prof.\ Paul Smaldino, Spring 2019
- \item
-   TA, Contemporary Moral Problems, Prof.\ David Jennings, Spring 2018
- \item
-   TA, Introduction to Ethics, Prof.\ David Jennings, Spring 2017
- \item
-   TA, Introduction to Cognitive Science, Prof.\ Rick Dale, Fall 2016
-
-\end{itemize}
-
 \vspace{-1em}
- \subsection*{Mentorship}
-
-\begin{itemize}
-  \item Mentored a team of graduate student co-authors developing the paper,
-    ``Minority-group incubators and majority-group reservoirs support the diffusion
-    of climate change adaptations,'' (2023) in \emph{Phil. Trans. B} (see \hyperlink{ptblink}{above}).
-  \item Mentored and supervised several UC Merced students during my dissertation work
-    who contributed to
-    Metacorps, the web application I developed for annotating metaphor found
-    on cable news. Students were Gloria Quintana, Amy Tang, Sebastian Lavenant, Isabella Methot,
-    Danny Zamora, and Conor Aaron.
-  \item
-    Mentored several graduate student programmers as part of the Virtual Watershed
-    project with the Northwest Knowledge Network.
-  \item Mentored and supervised undergraduate Joy Dai on a signal processing project using MATLAB for
-    one semester of research at Rice University, 2011.
-\end{itemize}
-%\hrule
-
-\vspace{-1em}
-\subsection*{Reviewer service}
+\section*{Reviewer service}
 
 \emph{Psychological Review} $~\cdot~$ \emph{Journal of Matehematical Sociology} $~\cdot~$ \\
 \emph{Evolutionary Human Sciences} $~\cdot~$ \emph{Journal of Artificial Societies and Social Simulation} $~\cdot~$ \emph{Cognitive Processing} $~\cdot~$ \emph{Society for Personality and Social Psychology Annual Convention} $~\cdot~$ \emph{Cognitive Systems Research}
 
 %\vspace{1cm}
 \vspace{-1em}
-\subsection*{Skills}
+\section*{Skills}
 
-  \textbf{Programming languages}: Julia; Python; R; NetLogo; bash/shell scripting; 
+  \textbf{Programming languages}: Julia; Python; R; NetLogo; bash/shell
+  scripting; \\
   HTML/CSS/JavaScript; Java; D; MATLAB; Mathematica; Scala; Clojure.
 
   \textbf{Technical proficiencies}: Computational 
@@ -373,8 +417,8 @@ model. \lurl{https://prms-python.github.io/PRMS-Python/build/html/index.html}
   Git \& GitHub; Web servers; \LaTeX; MongoDB, SQL, and other databases; 
   REST APIs and API development.
 
-  \textbf{Languages:} Some experience with Portuguese, French,
-  and Spanish.
+  \textbf{Languages:} English (native); Portuguese (fluent); Spanish (basic
+  conversational); and French (reading, some speaking).
 
 % \vfill
 \hrulefill
